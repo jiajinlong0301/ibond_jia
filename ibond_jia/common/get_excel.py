@@ -1,8 +1,13 @@
 import xlrd
 
 def get_excel_api(row):
-    excel=xlrd.open_workbook('../test_data/data.xlsx')
-    table=excel.sheets()[0]
+    """
+    获取data.xlsx文件中接口列的值
+    :param row:所有行
+    :return:返回第一列的所有值
+    """
+    excel=xlrd.open_workbook('../test_data/data.xlsx') #打开data.xlsx文件
+    table=excel.sheets()[0] #获取第一个sheet
     return (table.cell_value(row,0))
 
 def get_excel_inputs(row):

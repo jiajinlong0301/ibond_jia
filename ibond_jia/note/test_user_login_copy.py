@@ -37,7 +37,7 @@ def get_data_from_sheet(excel_file_path, sheet_name):
     data = lst[1:]
     return param_name, data
 
-get_data_from_sheet('../test_data/data.xlsx','user_login')
+get_data_from_sheet('../test_data/data.xlsx', 'user_login')
 
 # # 使用举例：
 # @pytest.mark.parametrize(*get_data_from_sheet("test_data.xlsx", "add_test"))

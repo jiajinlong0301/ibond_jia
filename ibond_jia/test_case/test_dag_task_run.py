@@ -1,6 +1,6 @@
 import requests
 from config.conf import *
-from config.headers import *
+from config.headers import headers
 
 def dag_task_run():
        url = server_ip() + "/api/dag_task/run"
