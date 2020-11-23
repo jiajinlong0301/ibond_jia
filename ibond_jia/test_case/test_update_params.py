@@ -1,13 +1,16 @@
-from config.headers import headers,server_ip
+from requests.models import Response
+from config.ip_config import *
+from config.headers import headers
 import requests
 
-def update_params():
+
+def test_update_params():
     """
     更新算子参数
     :param header: 传入请求头
     :return:
     """
-    url = server_ip() + "/api/operator/update_params"
+    url = org_A_ip() + "/api/operator/update_params"
     data = {
         "operator_instance_id": 1027,
         "params": {
@@ -16,8 +19,9 @@ def update_params():
             "model_interval": "3",
             "total_epoches": "7"}
     }
-    headers()['Referer'] = 'http://10.58.14.33:8080/login'
-    res = requests.post(url=url, json=data, headers=headers())
+    res: Response = requests.post(url=url, json=data, headers=headers())
+    print(res.json())
     assert res.json()['success'] == True
 
-update_params()
+
+test_update_params()

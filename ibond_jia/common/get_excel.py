@@ -1,4 +1,6 @@
 import xlrd
+from xlrd import Book
+
 
 def get_excel_api(row):
     """
@@ -6,19 +8,21 @@ def get_excel_api(row):
     :param row:所有行
     :return:返回第一列的所有值
     """
-    excel=xlrd.open_workbook('../test_data/data.xlsx') #打开data.xlsx文件
-    table=excel.sheets()[0] #获取第一个sheet
-    return (table.cell_value(row,0))
+    excel: Book = xlrd.open_workbook('../test_data/data.xlsx')  # 打开data.xlsx文件
+    table = excel.sheets()[0]  # 获取第一个sheet
+    return table.cell_value(row, 0)
+
 
 def get_excel_inputs(row):
     excel = xlrd.open_workbook('../test_data/data.xlsx')
     table = excel.sheets()[0]
-    return (table.cell_value(row,2),table.cell_value(row, 3))
+    return table.cell_value(row, 2), table.cell_value(row, 3)
+
 
 def get_excel_expection(row):
     excel = xlrd.open_workbook('../test_data/data.xlsx')
     table = excel.sheets()[0]
-    return (table.cell_value(row, 4))
+    return table.cell_value(row, 4)
     # print(table.nrows) #总行数
     # print(table.ncols) #总列数
     # print(table.row_values(0)) #第一行数据

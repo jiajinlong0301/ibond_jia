@@ -1,4 +1,4 @@
-from config.conf import *
+from config.ip_config import *
 from common.get_excel import *
 import requests
 import xlrd
