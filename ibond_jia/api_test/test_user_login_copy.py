@@ -1,9 +1,5 @@
-from config.ip_config import *
-from common.get_excel import *
-import requests
 import xlrd
-import pytest
-import json
+
 
 def sheet_to_list(excel_file_path, sheet_name):
     lst = []
