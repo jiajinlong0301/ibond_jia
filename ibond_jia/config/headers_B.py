@@ -7,7 +7,7 @@ def cookies():
     获取登录用户cookie
     :return: 用户cookie和csrfToken
     """
-    url = org_A_ip() + "/bridgeApi/user/login"  # 登录接口
+    url = 'http://' + org_B_ip() + ':8080' + '/bridgeApi/user/login'  # 登录接口
     data = {
         'account': 'admin',
         'password': 'ZAFWPv9tgy4/HEsujHm6JFzvL+7GW+QMVNN5S+dCpDHTF75SQ7rBlPKcqIiXbZiPHeHuJlYcNdpbKB'
@@ -46,3 +46,10 @@ def headers():
         'X-Requested-Width': 'XMLHttpRequest'
     }
     return headers
+
+def main():
+    print(headers())
+
+
+if __name__ == '__main__':
+    main()

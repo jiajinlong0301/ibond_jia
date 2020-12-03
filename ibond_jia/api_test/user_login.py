@@ -21,7 +21,7 @@ def user_login():
             print(i,'断言成功')
         except AssertionError:
             conect = Monitor('10.58.14.33', 'tdops', 'ai123456td')
-            logs = conect.link_server('pwd')
+            logs = conect.link_server('docker exec -it bond-web bash','ls')
             print(i, '断言失败', logs)
 
 user_login()
